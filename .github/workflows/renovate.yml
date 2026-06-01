@@ -1,0 +1,24 @@
+name: Renovate Self-Hosted
+
+on:
+  workflow_dispatch:
+  schedule:
+    # Tous les lundi a 06:00 UTC
+    - cron: "0 6 * * 1"
+
+jobs:
+  renovate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Run Renovate
+        uses: renovatebot/github-action@v43
+        with:
+          token: ${{ secrets.RENOVATE_TOKEN }}
+        env:
+          LOG_LEVEL: info
+          RENOVATE_PLATFORM: github
+          RENOVATE_REPOSITORIES: stephanetoukam007/squad-share-demo-project
+          RENOVATE_ONBOARDING: "false"
+          RENOVATE_REQUIRE_CONFIG: required
+          RENOVATE_AUTODISCOVER: "false"

@@ -1,0 +1,63 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "config:recommended"
+  ],
+  "timezone": "America/Montreal",
+  "dependencyDashboard": true,
+  "dependencyDashboardTitle": "Dependency Dashboard - Renovate",
+  "labels": [
+    "dependencies",
+    "renovate"
+  ],
+  "prHourlyLimit": 2,
+  "prConcurrentLimit": 5,
+  "rebaseWhen": "conflicted",
+  "packageRules": [
+    {
+      "description": "Les mises à jour majeures doivent être validées depuis le Dependency Dashboard.",
+      "matchUpdateTypes": [
+        "major"
+      ],
+      "dependencyDashboardApproval": true,
+      "labels": [
+        "dependencies",
+        "major"
+      ]
+    },
+    {
+      "description": "Regrouper les mises à jour Spring dans une seule PR lisible.",
+      "matchPackageNames": [
+        "org.springframework:*",
+        "org.springframework.boot:*"
+      ],
+      "groupName": "Spring ecosystem",
+      "labels": [
+        "dependencies",
+        "spring"
+      ]
+    },
+    {
+      "description": "Regrouper les mises à jour ArchUnit liées aux tests d'architecture.",
+      "matchPackageNames": [
+        "com.tngtech.archunit:*"
+      ],
+      "groupName": "ArchUnit",
+      "labels": [
+        "dependencies",
+        "architecture-tests"
+      ]
+    },
+    {
+      "description": "Regrouper les dépendances GitHub Actions si des workflows sont ajoutés.",
+      "matchManagers": [
+        "github-actions"
+      ],
+      "groupName": "GitHub Actions",
+      "labels": [
+        "dependencies",
+        "ci"
+      ]
+    }
+  ]
+}
