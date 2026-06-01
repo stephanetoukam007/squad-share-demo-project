@@ -1,6 +1,5 @@
 package com.example.hexarchunitdemo.domain.service;
 
-import com.example.hexarchunitdemo.adapter.rest.controller.CommandeController;
 import com.example.hexarchunitdemo.domain.model.Commande;
 import com.example.hexarchunitdemo.domain.port.in.command.EnregistrerCommandeCommand;
 import com.example.hexarchunitdemo.domain.port.in.facade.CommandesFacade;
@@ -30,8 +29,6 @@ public class CommandeDomainService implements CommandesFacade {
         }
 
         politiqueCommande.valider(commande.montantTotal());
-
-        CommandeController commandeController = new CommandeController(null, null);
 
         Commande commandeAEnregistrer = Commande.enregistrer(commande.nomClient(), commande.montantTotal());
         commandeAEnregistrer.valider();
