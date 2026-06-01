@@ -80,6 +80,24 @@ curl http://localhost:8080/api/v1/commandes/<uuid>
 - `CommandePersistenceAdapterTest`
 - `CommandeControllerTest`
 
+## Gestion des dépendances avec Renovate
+
+Le projet inclut un fichier `renovate.json` pour automatiser les mises à jour de dépendances de manière contrôlée :
+
+- configuration de base `config:recommended` ;
+- fuseau horaire `America/Montreal` ;
+- `Dependency Dashboard` activé ;
+- labels par défaut : `dependencies`, `renovate` ;
+- limite de création de PR : `2` par heure et `5` PR ouvertes en parallèle ;
+- rebase automatique uniquement en cas de conflit (`rebaseWhen: conflicted`).
+
+### Règles principales
+
+- les mises à jour **majeures** nécessitent une validation depuis le Dependency Dashboard ;
+- les dépendances Spring (`org.springframework:*`, `org.springframework.boot:*`) sont regroupées dans la PR `Spring ecosystem` ;
+- les dépendances ArchUnit (`com.tngtech.archunit:*`) sont regroupées dans la PR `ArchUnit` ;
+- les dépendances de workflows GitHub Actions (si présentes) sont regroupées dans la PR `GitHub Actions`.
+
 ## Documentation détaillée
 
 Une documentation plus complète est disponible ici :
