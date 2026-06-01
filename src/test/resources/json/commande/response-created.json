@@ -1,0 +1,15 @@
+{
+  "succes": true,
+  "message": "Commande enregistrée avec succès",
+  "donnees": {
+    "id": "00000000-0000-0000-0000-000000000000",
+    "nomClient": "Sophie Martin",
+    "montant": 125.50,
+    "devise": "CAD",
+    "statut": "VALIDEE",
+    "dateCreation": "2000-01-01T00:00:00Z"
+  },
+  "erreur": null,
+  "horodatage": "2000-01-01T00:00:00Z"
+}
+

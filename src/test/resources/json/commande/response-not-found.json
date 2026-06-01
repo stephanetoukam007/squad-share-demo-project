@@ -1,0 +1,11 @@
+{
+  "succes": false,
+  "message": "La commande demandée est introuvable.",
+  "donnees": null,
+  "erreur": {
+    "code": "COMMANDE_INTROUVABLE",
+    "detail": "Aucune commande ne correspond à l'identifiant fourni."
+  },
+  "horodatage": "2000-01-01T00:00:00Z"
+}
+

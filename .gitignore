@@ -1,0 +1,28 @@
+# Build Maven / Spring Boot
+/target/
+/out/
+
+# Journaux et rapports locaux
+*.log
+hs_err_pid*
+replay_pid*
+
+# IntelliJ IDEA
+/.idea/
+*.iml
+
+# Fichiers système macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Fichiers temporaires
+*.swp
+*.swo
+*~
+
+# Variables d'environnement locales
+.env
+.env.*
+!.env.example
+
